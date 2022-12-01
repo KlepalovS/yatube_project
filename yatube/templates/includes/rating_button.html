@@ -1,0 +1,15 @@
+{% if is_rating %}
+  <a class="btn btn-primary bg-light position-relative" href="{% url 'posts:rating_down' post.pk %}">
+    ❤️
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      {{ rating.count }}
+    </span>
+  </a>
+{% else %}
+  <a class="btn btn-primary position-relative" href="{% url 'posts:rating_up' post.pk %}">
+    ❤️
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      {{ rating.count }}
+    </span>
+  </a>
+{% endif %}

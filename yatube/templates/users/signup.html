@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}
+  Зарегистрироваться
+{% endblock %}
+{% block content %}
+  {% include 'includes/form.html' with is_post_form=True is_signup=True %}
+{% endblock %} 
