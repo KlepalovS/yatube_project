@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
+{% load cache %}
 {% block title %}
-  {{ title }}
+  Последние обновления на сайте
 {% endblock title %}
 {% block content %}
-  {{ text }}
+  {% include 'includes/switcher.html' %}
+  <h1>Последние обновления на сайте</h1>
+    {% for post in page_obj %}
+      {% include 'includes/article.html' with is_link_visible=True is_author_visible=True %}
+      {% if not forloop.last %} <hr> {% endif %}
+    {% endfor %}
+  {% include 'includes/paginator.html' %}
 {% endblock content %}

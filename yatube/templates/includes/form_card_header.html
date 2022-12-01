@@ -1,0 +1,47 @@
+{% if is_signup %}
+  Зарегистрироваться
+{% endif %}
+
+{% if is_login %}
+  Войти на сайт
+{% endif %}
+
+{% if is_create_post %}
+  {% if is_edit %}
+    Редактировать запись
+  {% else %}
+    Добавить запись
+  {% endif %}
+{% endif %}
+
+{% if is_password_change_form %}
+  Изменить пароль
+{% endif %}
+
+{% if is_password_reset_form %}
+  Чтобы сбросить старый пароль — введите адрес электронной почты, под которым вы регистрировались
+{% endif %}
+
+{% if is_password_reset_confirm %}
+  Введите новый пароль
+{% endif %}
+
+{% if is_password_change_done %}
+  Пароль изменён
+{% endif %}
+
+{% if is_password_reset_done %}
+  Отправлено письмо
+{% endif %}
+
+{% if is_password_reset_complete %}
+  Восстановление пароля завершено
+{% endif %}
+
+{% if is_logged_out %}
+  Выход 
+{% endif %}
+
+{% if is_password_reset_confirm_errore %}
+  Ошибка
+{% endif %}

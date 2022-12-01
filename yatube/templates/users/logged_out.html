@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}Вы вышли из системы{% endblock %}
+{% block content %}
+  {% include 'includes/form.html' with is_logged_out=True %}
+{% endblock %} 

@@ -1,0 +1,36 @@
+{% if is_create_post %}
+  <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-primary">
+      {% if is_edit %}
+        Сохранить
+      {% else %}
+        Добавить
+      {% endif %}               
+    </button>
+  </div>
+{% else %}
+  <div class="col-md-6 offset-md-4">
+    <button type="submit" class="btn btn-primary">
+    {% if is_signup %}
+      Зарегистрироваться
+    {% endif %}
+    {% if is_login %}
+      Войти
+    {% endif %}
+    {% if is_password_change_form %}
+      Изменить пароль
+    {% endif %}
+    {% if is_password_reset_form %}
+      Сбросить пароль
+    {% endif %}
+    {% if is_password_reset_confirm %}
+      Назначить новый пароль
+    {% endif %}
+    </button>
+    {% if is_login %}
+      <a href="{% url 'password_reset' %}" class="btn btn-link">
+        Забыли пароль?
+      </a>
+    {% endif %}
+  </div>
+{% endif %}

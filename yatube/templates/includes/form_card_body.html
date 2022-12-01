@@ -1,0 +1,37 @@
+{% if is_password_change_done %}
+  <p>Пароль изменён успешно</p>
+{% endif %}
+
+{% if is_password_reset_done %}
+  <p>Проверьте свою почту, вам должно прийти письмо со ссылкой для восстановления пароля</p>
+{% endif %}
+
+{% if is_password_reset_complete %}
+  <p>Ваш пароль был сохранен. Используйте его для входа</p>
+  <a href="{% url 'users:login' %}">войти</a>
+{% endif %}
+
+{% if is_logged_out %}
+  <p>Вы вышли из своей учётной записи. Ждём вас снова!</p>
+{% endif %}
+
+{% if is_password_reset_confirm_errore %}
+  <p>Ссылка сброса пароля содержит ошибку или устарела.</p>
+{% endif %}
+
+{% if is_post_form %}
+  {% if form.errors %}
+    {% include 'includes/form_errors.html' %}
+  {% endif %}
+  <form method="post"
+  {% if action_url %}
+    action="{% url action_url %}"
+  {% endif %}
+  enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+      {% include 'includes/form_field.html' %}
+    {% endfor %}
+    {% include 'includes/form_botton.html' %}
+  </form>
+{% endif %}
