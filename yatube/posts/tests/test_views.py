@@ -9,7 +9,9 @@ from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 
 from ..forms import PostForm
+
 from ..models import Comment, Follow, Group, Post, User
+
 
 TEMP_MEDIA_ROOT = tempfile.mkdtemp(dir=settings.BASE_DIR)
 
@@ -308,3 +310,4 @@ class PostViewTests(TestCase):
                 author=self.user,
             ).exists()
         )
+
