@@ -147,7 +147,7 @@ class Follow(models.Model):
 
 
 class PostRating(models.Model):
-    """Получаем модель для рейтинга постов."""
+    """Получаем модель оценки постов."""
 
     post = models.ForeignKey(
         Post,
