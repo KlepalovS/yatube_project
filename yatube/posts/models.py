@@ -149,6 +149,7 @@ class Follow(models.Model):
 class PostRating(models.Model):
     """Получаем модель оценки постов."""
 
+
     post = models.ForeignKey(
         Post,
         verbose_name='Оцениваемый пост',
